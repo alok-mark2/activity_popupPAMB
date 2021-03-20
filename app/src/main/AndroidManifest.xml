@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ActivityEventKelasB">
+        <activity android:name="Activitykedua"
+            android android:parentActivityName=".MainActivity"
+            android android:label="@string/label2"
+        <activity android:name=".ActivityHasil"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
