@@ -13,7 +13,7 @@ public class Activitykedua extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kedua);
+        setContentView(R.layout.activity_hasil);
 
         //Menghubungkan variabel txEmail dengan komponen textview Pada layot
         txEmail = findViewById(R.id.tvEmail);

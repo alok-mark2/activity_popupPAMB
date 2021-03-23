@@ -9,4 +9,12 @@
     <string name="txemail">Ini hasil email</string>
     <string name="txpassword">Ini hasil Password</string>
     <string name="label2">Logil Berhasil</string>
+    <string name="mDaftar">Pendaftaran</string>
+    <string name="ldaftar">Daftar</string>
+    <string name="enama">Masukan Nama</string>
+    <string name="eemail">Masukan Email</string>
+    <string name="epass">Masukan Password</string>
+    <string name="erpass">Masukan Password Kembali</string>
+    <string name="ealamat">Masukan Alamat</string>
+    
 </resources>

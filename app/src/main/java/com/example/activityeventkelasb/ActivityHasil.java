@@ -35,4 +35,5 @@ public class ActivityHasil extends AppCompatActivity {
         txpassword.setText(pass);
     }
 
+
 }

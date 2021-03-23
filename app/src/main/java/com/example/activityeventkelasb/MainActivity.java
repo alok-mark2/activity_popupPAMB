@@ -1,15 +1,40 @@
 package com.example.activityeventkelasb;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //Method untuk menampilkan menu
+        getMenuInflater().inflate(R.menu.menu, menu);
+    }
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    //membuatt kondisi jika yang dipilih adalah id mnDaftar
+        if (item.getItemId() == R.id.daftar)
+        {
+            //method untuk memanggil activity "Daftar Activity"
+            Intent i = new Intent(getApplicationContext(), DaftarActivity,class);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     //Deklarasi variabel untuk button
     Button buttonlogin;
 
@@ -101,5 +126,38 @@ public class MainActivity extends AppCompatActivity {
                     t.show()
                 }
                 }
+                //Membuat method untuk event dari floating button
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //Membuat kondisi untuk mengecek apakah EditText kosong atau tidak
+                        if (qnama.getText().toString() ||
+                                qalamat.getText().toString().isEmpty() ||
+                                qemail.getText().toString().isEmpty() ||
+                                qpassword.getText().toString().isEmpty() ||
+                                repassword.getText().toString().isEmpty())
+                        {
+                            //Menampilkan pesan notifikasi jika seluruh edittext wajib diisi
+                            Snackbar.make(view, text: "Wajib isi seluruh data !!!!," , Snackbar.LENGTH_LONG).show();
+                        }
+                        else
+                        {
+                            //Membuat kondisi untuk mengecek apakah isi dari EditText password dan EditText repasswird
+                            //sama atau tidak
+                            if (qpassword).getText.toString().equals(repassword.getText().toString()))
+                            {
+                                //Menampilkan pesan notifikasi jika pendaftaran berhasil
+                                Toast.makeText(getApplicationContext(), text:"Pendaftaran Berhasil.." ,
+                                Toast.LENGTH_LONG).show();
+
+                                //Method untuk kembali ke activity Main
+                                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(i);
+                            }
+                            else
+                            {
+                                Snackbar.make(view, text: "Password dan Repassword harus sama !!!!",
+                                    Snackbar.LENGTH_LONG).show();
+                            }
             }
             });
